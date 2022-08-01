@@ -2,3 +2,4 @@
 01/08/2022
 
 + AI chatbot: Done
++ Navbar & Responsive: Done
