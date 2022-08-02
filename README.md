@@ -3,4 +3,5 @@
 
 + AI chatbot: Done
 + Navbar & Responsive: Done
++ Slider Above navbar: Done
 + Footer: Done
