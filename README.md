@@ -5,3 +5,4 @@
 + Navbar & Responsive: Done
 + Slider Above navbar: Done
 + Footer: Done
++ Main sc 40% done
