@@ -13,6 +13,23 @@ namespace BaggageTracking.Controllers
             _dbContext = dbContext;
         }
 
+        public bool BaggageTakeOver(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return false;
+            var ticket = _dbContext.Tickets
+                .Include(x => x.Baggage)
+                .FirstOrDefault(x => x.FlyCode.ToLower() == id.ToLower());
+            if (ticket == null || ticket?.Baggage == null) return false;
+
+            ticket.Baggage.LoadingId = 2;
+            
+
+            _dbContext.Update(ticket.Baggage);
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+
         public bool AirplaneLoading(string id)
         {
             if (string.IsNullOrEmpty(id)) return false;
@@ -22,13 +39,11 @@ namespace BaggageTracking.Controllers
             if (ticket == null || ticket?.Baggage == null) return false;
 
             ticket.Baggage.LoadingId = 3;
-            ticket.Baggage.LandedId = 2;
 
             _dbContext.Update(ticket.Baggage);
             _dbContext.SaveChanges();
             return true;
         }
-
 
         public bool AirplaneLanded(string id)
         {
@@ -38,20 +53,49 @@ namespace BaggageTracking.Controllers
                 .FirstOrDefault(x => x.FlyCode.ToLower() == id.ToLower());
             if (ticket == null || ticket?.Baggage == null) return false;
 
-            ticket.Baggage.LandedId = 3;
-            ticket.Baggage.IsOutId = 2;
+            ticket.Baggage.LandedId = 2;
 
             _dbContext.Update(ticket.Baggage);
             _dbContext.SaveChanges();
             return true;
         }
 
-        public bool AirplaneIsOu(int? platformId,string ticketId)
+        public bool AirplaneLandedByUnloaded(string id)
         {
-            if (string.IsNullOrEmpty(ticketId) || platformId == null ) return false;
+            if (string.IsNullOrEmpty(id)) return false;
             var ticket = _dbContext.Tickets
                 .Include(x => x.Baggage)
-                .FirstOrDefault(x => x.FlyCode.ToLower() == ticketId.ToLower());
+                .FirstOrDefault(x => x.FlyCode.ToLower() == id.ToLower());
+            if (ticket == null || ticket?.Baggage == null) return false;
+
+            ticket.Baggage.LandedId = 3;
+
+            _dbContext.Update(ticket.Baggage);
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+        public bool AirplaneIsOut(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return false;
+            var ticket = _dbContext.Tickets
+                .Include(x => x.Baggage)
+                .FirstOrDefault(x => x.FlyCode.ToLower() == id.ToLower());
+            if (ticket == null || ticket?.Baggage == null) return false;
+
+            ticket.Baggage.IsOutId = 2;
+            
+            _dbContext.Update(ticket.Baggage);
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+        public bool AirplaneIsOutByPlatform(int? platformId, string flyCode)
+        {
+            if (string.IsNullOrEmpty(flyCode) || platformId == null) return false;
+            var ticket = _dbContext.Tickets
+                .Include(x => x.Baggage)
+                .FirstOrDefault(x => x.FlyCode.ToLower() == flyCode.ToLower());
             if (ticket == null || ticket?.Baggage == null) return false;
 
             var platform = _dbContext.Platforms.FirstOrDefault(p => p.Id == platformId);
@@ -65,7 +109,7 @@ namespace BaggageTracking.Controllers
             return true;
         }
 
-        public bool Timeupdate()
+        public bool Update()
         {
             var tickets = _dbContext.Tickets.Include(x => x.Baggage)
                 .ToList();
