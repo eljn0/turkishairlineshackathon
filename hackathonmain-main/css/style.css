@@ -1,0 +1,488 @@
+@font-face {
+    font-family: MuseoSans-900;
+    src: url("/fonts/MuseoSans-900.woff");
+
+}
+@font-face {
+    font-family: MuseoSans-700;
+    src: url("/fonts/MuseoSans-700.woff");
+
+}
+@font-face {
+    font-family: MuseoSans-500;
+    src: url("/fonts/MuseoSans-500.woff");
+
+}
+@font-face {
+    font-family: MuseoSans-300;
+    src: url("/fonts/MuseoSans-300.woff");
+
+}
+@font-face {
+    font-family: MuseoSans-100;
+    src: url("/fonts/MuseoSans-100.woff");
+
+}
+body{
+    background-color: #F3F2EF;
+}
+a{
+    text-decoration: none !important;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+.header{
+    position: static;
+    height: 60px;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #232B38;
+}
+.header ul{
+    display: flex;
+}
+.header ul li{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    height: 60px;
+    padding: 5px;
+    position: relative;
+    font-size: 14px;
+    font-family:'MuseoSans-900' ;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+}
+.header ul li button{
+    font-family: 'MuseoSans-700';
+    color: #fff;
+    font-size: 12px;
+    padding: 8px;
+    background-color: transparent;
+    width: 90px;
+    border-radius: 18px;
+    border: none;
+    outline: 1px solid white;
+    height: 36px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.header i{
+    font-size: 12px;
+    margin-left: 3px;
+}
+.header ul li a:hover{
+    background-color: #1A202A;
+}
+
+.header ul li button:hover{
+   background-color: rgba(255, 255, 255, 0.13);
+}
+a, button{
+    transition: all .25s ease 0s;
+}
+.underline{
+    display: inline-block;
+    position: relative;
+}
+.underline::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(234, 5, 5);
+  transition: all 0s ease;
+}
+.underline:hover::after{
+    transform: scaleX(1);
+
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0rem !important;
+}
+.headermobile{
+    display: none;
+}
+.carousel{
+    background-color: #232B38;
+}
+.map h1{
+   padding: 20px;
+    font-family:'MuseoSans-900' ;
+    text-align: center;
+
+}
+.container{
+    text-decoration: none;
+}
+.map {
+    height: 120vh;
+    width: 100%;
+    padding:   10px 10px ;
+    margin-bottom: 8rem;
+  }
+  
+  .map__hint {
+    text-align:center;
+  }
+  
+  .map__balloon {
+      text-align: center;
+      
+  }
+  .map__balloon a{
+    text-align: pass;
+  }
+  
+  .map__burger-img {
+      text-align: center;
+      height: 175px;
+      width: 300px;
+      
+  }
+  .footer{
+    position: relative;
+  bottom: 0; 
+    width: 100%;
+}
+.footer .social{
+    border-top: 1px dotted white;
+    height: 60px;
+    background-color: #232B38;
+    display: flex;
+    justify-content: center;
+}
+.footer .social ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.footer .social ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+ 
+}
+.footer .social i{
+    color: #C8CACD;
+  font-size: 20px;
+}
+.footer .linksfooter{
+    display: flex;
+    justify-content: center;
+    height: 57px;
+    background-color: #181C23;
+    border-bottom: 1px solid #808080;
+    
+}
+
+.footer .linksfooter ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+.footer .linksfooter ul li{
+   list-style: none;
+   height: 57px;
+}
+.footer .linksfooter ul li a{
+    color: white;
+    font-size: 11px;
+    height: 57px;
+    padding:10px ;
+    border-left: .5px solid #232B38;
+    border-right: .5px solid #232B38;
+    display: flex;
+   align-items: center;
+   font-family: 'MuseoSans-500';
+   
+}
+.footer .infolinks{
+    height: 118px;
+    background-color: #181C23;
+    display: flex;
+    justify-content: center;
+}
+.footer .infolinks ul{
+    display: flex;
+    flex-direction: row;
+
+}
+.footer .infolinks ul li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+.footer .infolinks ul li a{
+    color: #C3CBD7;
+    font-family: 'MuseoSans-300';
+    font-size:11px ;
+    line-height: 80px;
+}
+.footer .infolinks ul li p{
+    color: #C3CBD7;
+    font-family: 'MuseoSans-300';
+    font-size:11px ;
+}
+.footer .infolinks ul li a , .footer .infolinks ul li p {
+    margin: 15px;
+}
+.footer .infolinks ul li:hover{
+    color: white;
+    border-bottom: 1px dotted white;
+}
+.footer .infolinks ul .copyrihttext:hover{
+    border-bottom: none;
+} 
+.footer .infolinks ul li a:hover{
+    color: white;
+}
+.fa-tkblog {
+    background-image: url(https://www.turkishairlines.com/theme/img/icons/tkblog-icon.png)!important;
+    height: 19px;
+    width: 19px;
+}
+.entertainment p{
+    font-size: 1.3em !important;
+    padding-top: 10px;
+    font-family: 'MuseoSans-700';
+    text-align: center;
+}
+@media screen and (max-width:700px) {
+    .footer .linksfooter{
+       
+        overflow-x: scroll;
+    }
+
+    .footer .linksfooter ul li a{
+        color: white;
+        font-size: 8px;
+    }
+    .footer .infolinks{
+        height: 160px;
+        background-color: #181C23;
+        display: flex;
+        justify-content: center;
+    }
+    .footer .infolinks ul{
+        display: flex;
+        flex-direction: row;
+    
+    }
+    .footer .infolinks ul li{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+    }
+    .footer .infolinks ul li a{
+        
+        color: #C3CBD7;
+        font-family: 'MuseoSans-300';
+        font-size:8px ;
+        line-height: 20px;
+    }
+    .footer .infolinks ul li p{
+       
+        color: #C3CBD7;
+        font-family: 'MuseoSans-300';
+        font-size:8px ;
+    }
+    .footer .infolinks ul li a , .footer .infolinks ul li p {
+        margin: 10px;
+    }
+}
+
+   .glass {  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;  
+    height: 32 0px;  
+    background-color: #232B38;
+    padding: 50px;  
+    position: relative;
+    margin-bottom: -20px;
+    bottom: 0;
+    background-clip: padding-box;  
+    line-height: 1.5;  
+    transform: translatey(-5%);  
+    transition: transform 0.5s;  
+    color: #fff;
+   }  
+   .glass h1 {  
+    font-family: 'MuseoSans-700';
+    font-size: 24px;  
+    text-align: center;  
+   }  
+   .glass h2 {  
+    font-size: 1vh;  
+    margin-top: 16px;  
+   }  
+   .input {  
+    width: 350px;  
+    height: 70px;  
+    overflow: hidden;  
+    margin-top: 50px;  
+   }  
+   .input input {  
+    width: 100%;  
+    height: 50px;  
+    border: none;  
+    padding-left: 30px;  
+    padding-top: 0;  
+    outline: none;  
+    font-size: 18px;  
+    border-radius: 20px;  
+   }  
+   .glass p {  
+    font-size: 3vh;  
+    margin-top: 15px;  
+    max-width: 700px;
+    font-family: 'MuseoSans-700';
+   }  
+
+.entertainment{
+    min-height: 100%;
+}
+.entertainment h1{
+    font-family: 'MuseoSans-900';
+    text-align: center;
+    padding-bottom: 10px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.cards img{
+    
+ border-radius: 6px;
+ transition: all 0.5s;
+}
+.cards img:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+
+
+
+ @media screen and (max-width: 700px){
+    .glass{
+        margin-bottom: -30px;
+        max-width: 100%;
+    }
+    .glass p{
+        font-size: 14px;
+    }
+    .map {
+        height: 70vh;
+        width: 100%;
+        padding:   10px 10px ;
+        margin-bottom: 13rem;
+      }
+   }
+   
+
+@media screen and (max-width: 810px){
+    .header{
+        display:none;
+    }
+    .headermobile{
+        font-family: 'MuseoSans-500';
+        display: block;
+    }
+    .mobilenav{
+        display: flex;
+        height: 60px;
+        background-color: #232B38;
+        align-items: center;
+    }
+    .mobilenav .logomobile{
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+    }
+    .mobilenav .icon{
+        color: #fff;
+        font-size: 30px;
+    }
+.menulinks{
+    display: none;
+    background-color: #232B38;
+    border-top: 2px solid red;
+    transition: all 2s;
+   
+}
+.menulinks ul li{
+  padding: 20px 40px ;
+
+}
+.menulinks ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'MuseoSans-500';
+    text-align: left;
+
+}
+
+.mobilenav ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.mobilenav ul li{
+    display: flex;
+    align-items: center;
+}
+.mobilenav ul li a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+
+}
+.mobilenav ul li button {
+   background-color: transparent;
+   border-radius: 50%;
+   height: 35px;
+   width: 35px;
+   margin-right: 10px;
+
+}
+.mobilenav ul li button i{
+    color: white;
+    
+}
+
+}
